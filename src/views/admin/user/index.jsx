@@ -1,27 +1,14 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
-import { 
-    get_user_list,
-    get_docentes_list,
-    get_estudiantes_list,
-    get_personal_list
-} from "./../../../redux/actions/users/users";
+import { get_estudiantes_list } from "./../../../redux/actions/users/users";
 import { rutasTabs } from "routes";
-import { Link, Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
 
-function Users({
-    get_user_list,
-    get_docentes_list,
-    get_estudiantes_list,
-    get_personal_list
-}) {
+function Users({ get_estudiantes_list }) {
     
     let location = useLocation();
     useEffect(() => {
-        get_user_list()
-        get_docentes_list()
         get_estudiantes_list()
-        get_personal_list()
     }, [])
 
     const getDefaultRoute = () => {
@@ -60,15 +47,9 @@ function Users({
 }
 
 const mapStateToProps = state => ({
-    users: state.users.user_list,
-    docentes: state.users.lista_docentes,
     estudiantes: state.users.lista_estudiantes,
-    personal: state.users.lista_personal
 });
 
 export default connect( mapStateToProps, {
-    get_user_list,
-    get_docentes_list,
     get_estudiantes_list,
-    get_personal_list
 }) (Users);

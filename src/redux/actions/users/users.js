@@ -7,10 +7,10 @@ import {
     GET_ESTUDENT_LIST_SUCCESS,
     GET_ESTUDENT_LIST_FAIL,
     GET_PERSONAL_LIST_SUCCESS,
-    GET_PERSONAL_LIST_FAIL
+    GET_PERSONAL_LIST_FAIL,
  } from "./types";
  
- export const get_user_list = () => async dispatch => {
+export const get_user_list = () => async dispatch => {
     const config = {
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('access')}`,
@@ -42,8 +42,7 @@ import {
              payload: errorMessage
          });
      }
- };
- 
+};
 
 export const get_docentes_list = () => async dispatch => {
     const config = {
@@ -145,3 +144,4 @@ export const get_personal_list = () => async dispatch => {
         });
     }
 }
+///DELETE USERS

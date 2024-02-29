@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import perfilDefault from "assets/img/auth/user.jpg";
 
 const Navbar = ({ onOpenSidenav, brandText, logout, load_user, user }) => {
-  const baseURL = process.env.REACT_APP_API_URL; // URL base del servidor donde se almacenan las imágenes
+  const baseURL = process.env.REACT_APP_API_URL;
 
   const [darkmode, setDarkmode] = React.useState(false);
 
